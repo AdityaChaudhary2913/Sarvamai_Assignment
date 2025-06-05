@@ -2,5 +2,6 @@ locust
 matplotlib
 pandas==2.2.0
 numpy
+streamlit
 
 -e .
