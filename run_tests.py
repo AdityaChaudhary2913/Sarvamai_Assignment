@@ -2,6 +2,7 @@ import subprocess
 import os
 import time
 import shutil
+import math
 
 
 concurrency = [1, 5, 10, 25]
@@ -41,6 +42,7 @@ def run_locust_test(num_users, spawn_rate_val, run_time_val):
     time.sleep(120)
 
 def main():
+    start_time = time.time()
     if os.path.exists(RESULTS_DIR):
         print(f"Clearing existing results directory: {RESULTS_DIR}")
         shutil.rmtree(RESULTS_DIR)
@@ -57,8 +59,15 @@ def main():
         spawn_rate_val = spawn_rate[i]
         run_time_val = run_time[i]
         run_locust_test(num_users, spawn_rate_val, run_time_val)
+        
+    end_time = time.time()
+    
+    total_seconds = end_time - start_time
+    minutes = math.floor(total_seconds / 60)
+    seconds = total_seconds % 60
 
     print("\n--- All load tests completed! ---")
+    print(f"\n--- Total time taken: {minutes:.0f} minutes and {seconds:.2f} seconds ---")
     print(f"Results are saved in the '{os.path.basename(RESULTS_DIR)}' directory.")
 
 if __name__ == "__main__":

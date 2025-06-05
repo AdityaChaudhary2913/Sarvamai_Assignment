@@ -7,7 +7,9 @@ if not SARVAM_API_KEY:
     print("[WARNING]: SARVAM_API_KEY is not set in the environment variables!")
 
 class STUser(HttpUser):
-    wait_time = between(2, 5)
+    # For 4th configuration, i have to use wait time between(5, 10), because i was getting error that "too many request"
+    # For configuration 1, 2, 3 i have used wait time between(2, 5)
+    wait_time = between(4, 8)
     host = "https://api.sarvam.ai"
     
     def on_start(self):
