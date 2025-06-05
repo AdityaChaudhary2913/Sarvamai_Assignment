@@ -1,0 +1,5 @@
+setup.py
+Sarvamai_Assignment.egg-info/PKG-INFO
+Sarvamai_Assignment.egg-info/SOURCES.txt
+Sarvamai_Assignment.egg-info/dependency_links.txt
+Sarvamai_Assignment.egg-info/top_level.txt
