@@ -10,8 +10,8 @@ spawn_rate = [1, 2, 2, 4]
 run_time = ["1m", "1m", "3m", "5m"]
 
 BASE_DIR = os.path.dirname(os.path.abspath(__file__))
-LOCUSTFILE_PATH = os.path.join(BASE_DIR, 'src', 'locustfile.py')
-RESULTS_DIR = os.path.join(BASE_DIR, 'results')
+LOCUSTFILE_PATH = os.path.join(BASE_DIR, 'sarvamai_benchmarking.py')
+RESULTS_DIR = os.path.join(BASE_DIR, "..", 'results')
 
 def run_locust_test(num_users, spawn_rate_val, run_time_val):
     dir_name = f"c{num_users}_s{spawn_rate_val}_rt{run_time_val}"
