@@ -75,3 +75,13 @@ While not consistently highest across *all* configurations, the following langua
 
 * **Malayalam, Marathi, and Kannada:** Exhibit extreme latency spikes in the `c10_s2_rt3m` configuration, making them critical areas for investigation.
 * **Gujarati and Odia:** Show elevated p95 latencies in the `c25_s4_rt5m` configuration.
+
+
+## 7. Performance Test Dashboard
+
+I’ve built a simple web application using streamlit with customizable concurrency, spawn rate, and run time. This dashboard allows users to configure and trigger Locust tests without needing to interact directly with the command line.
+Key Features:
+
+* **Adjustable Load Parameters:**  Input fields allow you to define the number of concurrent users, the spawn rate(users per second), and the total run time of the test.
+* **One-Click Test Trigger:** A dedicated button initiates the Locust test with specified parameters.
+* **Results Saved Automatically:** All test results(CSV reports, Charts) are automatically saved to a dedicated time-stamped folder within the results directory.
